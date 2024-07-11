@@ -1,0 +1,9 @@
+FROM openjdk:22-jdk
+
+ADD app /app
+WORKDIR /app
+
+#cp use for set classpath for java file
+RUN javac -cp lombok.jar Forever.java
+
+CMD [ "java", "Forever", "-cp", "lombok.jar" ]
